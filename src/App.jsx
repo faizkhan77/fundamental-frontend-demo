@@ -10,7 +10,7 @@ import { calculateFrontendOverallSignal } from "./utils/calculateOverallSignal";
 import { ThemeProvider } from "./context/ThemeContext"; // 1. IMPORT ThemeProvider
 import "./theme.css"; // Ensure theme.css is imported (you already have this)
 
-const API_BASE_URL = "http://127.0.0.1:8000/api";
+const API_BASE_URL = "https://fundamental-backend-demo.onrender.com/api";
 
 function App() {
   const [selectedStockData, setSelectedStockData] = useState(null);
