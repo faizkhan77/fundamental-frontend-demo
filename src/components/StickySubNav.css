@@ -1,0 +1,60 @@
+/* src/components/StickySubNav.css */
+.sticky-subnav-wrapper {
+    background-color: var(--secondary-bg-color);
+    padding: 0px 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .sticky-subnav-wrapper.sticky {
+    position: fixed;
+    top: 0px; /* Sticking to very top */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--card-bg-color); /* Solid background when sticky */
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  .sticky-subnav-stock-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-primary-color);
+    padding: 10px 0 5px;
+    text-align: center;
+  }
+  
+  .sticky-subnav-wrapper.sticky .sticky-subnav-stock-name {
+    padding: 8px 0 4px;
+    font-size: 1em;
+  }
+  
+  .sticky-subnav-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    padding-bottom: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .sticky-subnav-links a {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text-secondary-color);
+    font-size: 0.9em;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-bottom-color 0.2s ease;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .sticky-subnav-links a:hover {
+    background-color: var(--primary-bg-color); /* Lighter hover, or another variable */
+    color: var(--link-hover-color);
+  }
+  
+  .sticky-subnav-links a.active {
+    color: var(--link-color);
+    font-weight: 600;
+    border-bottom-color: var(--link-color);
+  }

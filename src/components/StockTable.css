@@ -1,0 +1,124 @@
+/* src/StockTable.css or App.css */
+.indicator-selectors {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--secondary-bg-color); /* Themed */
+  border-radius: 8px;
+  border: 1px solid var(--border-light-color); /* Themed */
+}
+
+.indicator-selectors h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--text-primary-color); /* Themed */
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Space between checkboxes */
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: var(--text-secondary-color); /* Themed */
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: var(--link-color); /* Themed - uses theme's link color for checkbox */
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9em;
+  box-shadow: 0 2px 15px var(--shadow-color); /* Themed */
+  /* Default background for odd rows will be inherited or transparent, 
+     allowing underlying page/container background (var(--primary-bg-color)) to show */
+}
+
+.stock-table th,
+.stock-table td {
+  border: 1px solid var(--border-color); /* Themed */
+  padding: 10px 12px; /* Increased padding */
+  text-align: left;
+  white-space: nowrap; /* Prevent text wrapping for indicator names */
+  /* Text color will be inherited, typically var(--text-primary-color) or var(--text-secondary-color) based on context */
+}
+
+.stock-table th {
+  background-color: var(--secondary-bg-color); /* Themed */
+  color: var(--text-primary-color); /* Themed */
+  font-weight: bold;
+  position: sticky; /* For sticky headers if table scrolls */
+  top: 0;
+  z-index: 1;
+}
+
+/* Odd rows will take the main background (var(--primary-bg-color) in dark mode, var(--card-bg-color) or var(--primary-bg-color) in light) */
+/* Even rows are styled to be slightly different, matching the screenshot pattern */
+.stock-table tbody tr:nth-child(even) {
+  background-color: var(--secondary-bg-color); /* Themed: lighter in dark mode, light gray in light mode */
+}
+
+.stock-table tbody tr:hover {
+  background-color: var(--border-color); /* Themed: provides a subtle hover effect */
+  cursor: pointer;
+}
+
+/* Ensure text in td is appropriately colored for the theme */
+.stock-table td {
+    color: var(--text-secondary-color); /* Default for data cells */
+}
+.stock-table td:first-child { /* Typically the name or Sr. No. */
+    color: var(--text-primary-color);
+    /* font-weight: 500; /* Optional: if you want first col text to be bolder */
+}
+
+
+.subtitle {
+  font-size: 0.9em;
+  color: var(--text-secondary-color); /* Themed */
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+/* Table container for horizontal scrolling on smaller screens */
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+
+/* Signal styling using theme accent colors */
+.signal-strong-buy {
+  color: var(--accent-strong-positive-color); /* Themed */
+  font-weight: bold;
+}
+.signal-buy {
+  color: var(--accent-positive-color); /* Themed */
+}
+.signal-neutral {
+  color: var(--accent-neutral-color); /* Themed */
+}
+.signal-sell {
+  color: var(--accent-negative-color); /* Themed */
+}
+.signal-strong-sell {
+  color: var(--accent-strong-negative-color); /* Themed */
+  font-weight: bold;
+}
+
+/* Ensure container in App.css has enough width or table-container handles overflow */
+/* This .container rule seems generic, ensure it doesn't conflict or is defined elsewhere as needed.
+   It does not use color variables so it's fine as is regarding theming itself. */
+.container {
+  padding: 20px;
+  max-width: 95%; /* Adjust as needed */
+  margin: auto;
+}

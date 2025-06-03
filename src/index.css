@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ... other global variables ... */
+  --chart-grid-color: #e0e0e0;
+  --chart-tick-color: #555555;
+  --chart-axis-line-color: #cccccc;
+  --chart-label-color: #555555;
+  --chart-legend-text-color: #333333;
+
+  --chart-price-line-color: #3498db;
+  --chart-price-area-start: #3498db; /* Used in gradient def */
+  --chart-price-area-end: #3498db;   /* Used in gradient def */
+  --chart-dma50-color: #f39c12;
+  --chart-dma200-color: #8e44ad;
+  --chart-volume-bar-color: #aed6f1;
+
+  /* Example: Ensure section-card background matches Tailwind for consistency if not fully converted */
+  --card-bg-color: #ffffff; 
+  --text-color: #333333;
+}
+
+[data-theme="dark"] {
+  /* ... other dark theme global variables ... */
+  --chart-grid-color: #4a5568; /* Example: dark gray */
+  --chart-tick-color: #a0aec0; /* Example: light gray */
+  --chart-axis-line-color: #718096;
+  --chart-label-color: #a0aec0;
+  --chart-legend-text-color: #e2e8f0;
+
+  --chart-price-line-color: #63b3ed; /* Lighter blue */
+  --chart-price-area-start: #63b3ed;
+  --chart-price-area-end: #63b3ed;
+  --chart-dma50-color: #f6ad55;    /* Lighter orange */
+  --chart-dma200-color: #b794f4;   /* Lighter purple */
+  --chart-volume-bar-color: #76c4f5; /* Lighter volume blue */
+
+  --card-bg-color: #1A202C; /* Tailwind's slate-800 or similar */
+  --text-color: #E2E8F0; /* Tailwind's slate-200 or similar */
+}
+
+/* Apply base card styling if not using Tailwind for everything globally */
+.section-card {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  /* Add other base styles like padding, margin, shadow, border-radius if not handled by Tailwind classes directly on the element */
+  @apply p-4 sm:p-6 mb-6 shadow-lg rounded-lg; /* Example of applying Tailwind classes via @apply */
+}
+
+.section-card h2 {
+   /* Example: ensure h2 uses text color from theme, or style with Tailwind */
+  @apply text-xl sm:text-2xl font-semibold text-[var(--text-color)] mb-4;
+}
+
+/* For Recharts tooltips, if you need to override theming beyond props */
+.recharts-tooltip-wrapper .custom-tooltip { /* Assuming PriceChartTooltip adds 'custom-tooltip' */
+  @apply bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded shadow-lg text-sm p-3;
+}
+.recharts-tooltip-wrapper .custom-tooltip .label {
+  @apply font-bold mb-1.5 text-slate-700 dark:text-slate-200;
+}
+
+
+/* General loading/no-data messages, make them Tailwind-friendly */
+.loading-message, .no-data-message {
+  @apply flex items-center justify-center h-full text-slate-500 dark:text-slate-400 italic p-10 text-center min-h-[150px];
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

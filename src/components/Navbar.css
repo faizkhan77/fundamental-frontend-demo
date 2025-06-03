@@ -1,0 +1,61 @@
+/* src/components/Navbar.css */
+.app-navbar {
+    background-color: var(--card-bg-color); /* Changed from fixed white */
+    padding: 10px 0px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    /* position: sticky; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color); /* Added border for better separation */
+  }
+  
+  .navbar-container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    font-family: 'Merriweather Sans', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--text-primary-color); /* Changed from fixed color */
+    letter-spacing: -0.5px;
+  }
+  
+  .theme-toggle-button {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-primary-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .theme-toggle-button:hover {
+    background-color: var(--border-color);
+  }
+  
+  /* Optional: If you add links later */
+  .navbar-links a {
+    color: var(--text-secondary-color); /* Use variable */
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: var(--link-color); /* Use variable */
+  }
